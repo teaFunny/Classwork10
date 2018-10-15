@@ -5,4 +5,8 @@ public class Tiger extends Animal {
     public void talk() {
         System.out.println("Rrrr!");
     }
+
+    public void liveInJungle(){
+        System.out.println("I`m in jungles");
+    }
 }
