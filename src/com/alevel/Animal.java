@@ -1,5 +1,7 @@
 package com.alevel;
 
+import java.util.prefs.BackingStoreException;
+
 public abstract class Animal {
     int legs;
     String animalClass;
@@ -58,9 +60,16 @@ public abstract class Animal {
      * Connect two animals by talking.
      * @param animal animal with whom this object connects
      */
-    public void interact(Animal animal){
-        this.talk();
-        animal.talk();
+    public void interact(Animal animal) throws BackingStoreException {
+        try {
+            this.talk();
+            animal.talk();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            throw new BackingStoreException(e);
+        }
+
     }
 
 
